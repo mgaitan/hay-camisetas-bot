@@ -26,5 +26,5 @@ if len(sys.argv) > 1 and sys.argv[1] == "--tweet":
         access_token=access_token, access_token_secret=access_token_secret
     )
 
-    response = client.create_tweet(text=msg)
+    response = client.create_tweet(text=f"{msg} https://www.adidas.com.ar/camiseta-titular-argentina-3-estrellas-2022/IB3593.html")
     print(f"https://twitter.com/user/status/{response.data['id']}")
