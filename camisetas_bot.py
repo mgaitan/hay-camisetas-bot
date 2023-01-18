@@ -16,17 +16,15 @@ msg = "Hay stock de camisetas ⭐⭐⭐ del campeón del Mundo. "
 msg += f"Talles {', '.join(i for i in available[:-1])} y {available[-1]}." if len(available) > 1 else f"Talle {available[0]} únicamente."
 """
 msg = 'qué hermoso es ser campeón del mundo, cierto?'
-print(os.environ["LAST_NAME"])
+
 if len(sys.argv) > 1 and sys.argv[1] == "--tweet":
     # from dotenv import load_dotenv
     # load_dotenv()
     
-
     consumer_key = os.environ["TW_CONSUMER_KEY"]
     consumer_secret = os.environ["TW_CONSUMER_SECRET"]
     access_token = os.environ["TW_ACCESS_TOKEN"]
     access_token_secret = os.environ["TW_ACCESS_TOKEN_SECRET"]
-    print(os.environ)
     client = tweepy.Client(
         consumer_key=consumer_key, consumer_secret=consumer_secret,
         access_token=access_token, access_token_secret=access_token_secret
