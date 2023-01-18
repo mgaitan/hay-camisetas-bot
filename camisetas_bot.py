@@ -25,6 +25,17 @@ if len(sys.argv) > 1 and sys.argv[1] == "--tweet":
     consumer_secret = os.environ["TW_CONSUMER_SECRET"]
     access_token = os.environ["TW_ACCESS_TOKEN"]
     access_token_secret = os.environ["TW_ACCESS_TOKEN_SECRET"]
+
+    assert consumer_key.startswith("knTjrtR")
+    
+    assert consumer_secret.startswith("nDXXCy")
+    
+    assert access_token.startswith("40654511")
+    
+    assert access_token_secret.startswith("iMTVGa7")
+    
+
+
     client = tweepy.Client(
         consumer_key=consumer_key, consumer_secret=consumer_secret,
         access_token=access_token, access_token_secret=access_token_secret
