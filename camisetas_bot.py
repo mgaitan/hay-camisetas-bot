@@ -28,6 +28,7 @@ if data["availability_status"] == "IN_STOCK":
         if len(available) > 1
         else f"Talle {available[0]} únicamente."
     )
+    msg += " https://www.adidas.com.ar/camiseta-titular-argentina-3-estrellas-2022/IB3593.html"
 else:
     msg = random.choice(NO_STOCK_MESSAGES)
 
@@ -55,6 +56,6 @@ if len(sys.argv) > 1 and sys.argv[1] == "--tweet":
     if str(last_tweet) not in NO_STOCK_MESSAGES:
 
         response = client.create_tweet(
-            text=f"{msg} https://www.adidas.com.ar/camiseta-titular-argentina-3-estrellas-2022/IB3593.html"
+            text=msg
         )
         print(f"https://twitter.com/user/status/{response.data['id']}")
