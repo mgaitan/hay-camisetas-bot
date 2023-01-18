@@ -9,11 +9,13 @@ headers = {"user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/
 data = requests.get("https://www.adidas.com.ar/api/products/IB3593/availability", headers=headers).json()
 if not data["availability_status"] == "IN_STOCK":
     print("no hay stock")
-    sys.exit(1)
+    # sys.exit(1)
+
+"""
 available = [a["size"] for a in data["variation_list"] if a["availability"]]
 msg = "Hay stock de camisetas ⭐⭐⭐ del campeón del Mundo. "
 msg += f"Talles {', '.join(i for i in available[:-1])} y {available[-1]}." if len(available) > 1 else f"Talle {available[0]} únicamente."
-
+"""
 
 if len(sys.argv) > 1 and sys.argv[1] == "--tweet":
     consumer_key = os.environ["TW_CONSUMER_KEY"]
@@ -26,5 +28,5 @@ if len(sys.argv) > 1 and sys.argv[1] == "--tweet":
         access_token=access_token, access_token_secret=access_token_secret
     )
 
-    response = client.create_tweet(text=f"{msg} https://www.adidas.com.ar/camiseta-titular-argentina-3-estrellas-2022/IB3593.html")
+    response = client.create_tweet(text="Hola mundo 🇦🇷🇦🇷🇦🇷⭐⭐⭐🇦🇷🇦🇷🇦🇷")
     print(f"https://twitter.com/user/status/{response.data['id']}")
